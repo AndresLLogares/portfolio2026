@@ -55,7 +55,7 @@ export const Contact = () => {
                 <LinkedInIcon fontSize="large" />
               </ContactButton>
               <ContactButton
-                onClick={() => window.open(personalInfo.social.twitter, '_blank')}
+                onClick={() => window.open(personalInfo.social.whatsapp, '_blank')}
               >
                 <WhatsAppIcon fontSize="large" />
               </ContactButton>
