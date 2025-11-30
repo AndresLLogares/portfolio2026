@@ -27,11 +27,13 @@ void main() {
 El **ruido de Perlin** es un algoritmo que genera valores pseudo-aleatorios con continuidad espacial.
 
 **¿Por qué usarlo?**
+
 - Crea patrones orgánicos y naturales
 - Es determinista: misma entrada = misma salida
 - Tiene continuidad (no hay saltos bruscos)
 
 **Cómo funciona:**
+
 1. Divide el espacio en una cuadrícula
 2. Asigna gradientes aleatorios a cada esquina
 3. Interpola suavemente entre gradientes
@@ -70,6 +72,7 @@ float fbm(vec2 p, int octaves) {
 ```
 
 **Visualización:**
+
 - Octava 1: Grandes ondulaciones (montañas)
 - Octava 2: Detalles medianos (colinas)
 - Octava 3: Detalles finos (rocas)
@@ -88,6 +91,7 @@ vec2 hash22(vec2 p) {
 ```
 
 **Propiedades:**
+
 - Determinista
 - Distribución uniforme
 - Rango: -1 a 1
@@ -225,6 +229,7 @@ function AnimatedBackground() {
 ## ⚡ Optimización
 
 ### 1. Limitar Octavas de FBM
+
 ```glsl
 // Menos octavas = mejor rendimiento
 float fbm(vec2 p) {
@@ -234,12 +239,14 @@ float fbm(vec2 p) {
 ```
 
 ### 2. Reducir Complejidad
+
 ```glsl
 // Usar smoothstep en lugar de cálculos complejos
 float soft = smoothstep(0.0, 1.0, value);
 ```
 
 ### 3. Pre-calcular Valores
+
 ```glsl
 // Calcular una vez, usar muchas veces
 float time = uTime * 0.1;
@@ -256,15 +263,21 @@ uniform float uGraphiteIntensity; // Intensidad grafito (0.5-2.0)
 
 ## 📖 Recursos de Aprendizaje
 
-1. **The Book of Shaders** - https://thebookofshaders.com/
+1. **The Book of Shaders**
+
+   - https://thebookofshaders.com/
    - Capítulo sobre ruido
    - Ejemplos interactivos
 
-2. **Shadertoy** - https://www.shadertoy.com/
+2. **Shadertoy**
+
+   - https://www.shadertoy.com/
    - Miles de ejemplos de shaders
    - Comunidad activa
 
-3. **Three.js Documentation** - https://threejs.org/docs/
+3. **Three.js Documentation**
+  
+   - https://threejs.org/docs/
    - ShaderMaterial
    - Uniforms y varyings
 

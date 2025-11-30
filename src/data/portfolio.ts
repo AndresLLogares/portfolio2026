@@ -3,10 +3,7 @@ import { colorSchema, positionSchema } from "../components/MyJourney";
 export const personalInfo = {
   name: 'Andres Luis Logares',
   title: 'Developer',
-  tagline: 'Construyendo experiencias web excepcionales',
-  bio: 'Desarrollador apasionado por crear soluciones elegantes y eficientes. Especializado en tecnologías modernas y diseño minimalista.',
   email: 'andresl940@hotmail.com',
-  location: 'Tu Ciudad, País',
   social: {
     github: 'https://github.com/AndresLLogares',
     linkedin: 'https://www.linkedin.com/in/andr%C3%A9s-luis-logares-522595172/',
