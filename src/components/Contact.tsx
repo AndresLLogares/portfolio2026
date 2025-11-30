@@ -12,7 +12,7 @@ export const Contact = () => {
 
   return (
     <Box
-      id="contact"
+      id="about"
       sx={{
         py: 10,
         backgroundColor: isMobile ? 'rgb(254, 252, 254, 1)' : 'rgb(254, 252, 254, 0.4)',
@@ -29,9 +29,8 @@ export const Contact = () => {
         >
           {ButtonsInfo.contactMe}
         </Typography>
-        <Box sx={{ width: '60px', height: '4px', bgcolor: 'primary.main', mb: 5 }} />
 
-        <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+        <Grid container spacing={4} sx={{ justifyContent: 'flex-start' }}>
           {/* El tamaño del Grid item es correcto */}
           <Grid container >
             {/* Este es el Box contenedor con flexWrap: 'wrap' */}
