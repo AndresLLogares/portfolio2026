@@ -8,6 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const colorSchema = ['primary', 'secondary', 'success', 'error', 'info', 'warning'] as const;
 
+export const positionSchema = ['left', 'right', 'alternate', 'alternate-reverse'] as const;
+
 export interface TimelineEvent {
     time?: string;
     title: string;
@@ -17,16 +19,15 @@ export interface TimelineEvent {
     description_4?: string;
     description_5?: string;
     color?: typeof colorSchema[number];
+    position?: 'left' | 'right' | 'alternate' | 'alternate-reverse';
 }
 
 export interface CustomTimelineProps {
     events: TimelineEvent[];
-    position?: 'left' | 'right' | 'alternate' | 'alternate-reverse';
 }
 
-export const MyJourney = ({ events, position = 'alternate' }: CustomTimelineProps) => {
+export const MyJourney = ({ events }: CustomTimelineProps) => {
     const isMobile = useMediaQuery('(max-width:1024px)');
-    const timelinePosition = isMobile ? 'right' : position;
     return (
         <Box
             id="my-journey"
@@ -37,14 +38,14 @@ export const MyJourney = ({ events, position = 'alternate' }: CustomTimelineProp
             }}
         >
             <Container maxWidth={isMobile ? "sm" : "lg"} sx={{ px: { xs: 0, md: 2 } }}>
-                <Timeline position={timelinePosition}>
-                    {events.map((event, idx) => (
+                {events.map((event, idx) => (
+                    <Timeline position={event.position}>
                         <TimelineItem key={idx}>
                             {event.time && (
                                 <TimelineOppositeContent
                                     fontWeight="bold"
                                     color="text.primary">
-                                    <Typography variant="body2">{event.time}</Typography>
+                                    <Typography variant="body1">{event.time}</Typography>
                                 </TimelineOppositeContent>
                             )}
                             <TimelineSeparator>
@@ -97,8 +98,8 @@ export const MyJourney = ({ events, position = 'alternate' }: CustomTimelineProp
                                 </List>
                             </TimelineContent>
                         </TimelineItem>
-                    ))}
-                </Timeline>
+                    </Timeline>
+                ))}
             </Container>
         </Box>
     );

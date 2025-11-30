@@ -1,4 +1,4 @@
-import { colorSchema } from "../components/MyJourney";
+import { colorSchema, positionSchema } from "../components/MyJourney";
 
 export const personalInfo = {
   name: 'Andres Luis Logares',
@@ -36,7 +36,8 @@ export const timelineEvents = [
     description_3: 'Managed the complete CI/CD lifecycle, deploying projects to production environments using Jenkins, ensuring secure, automated, and reliable releases.',
     description_4: 'Collaborate closely with stakeholders to gather requirements, provide innovative technical suggestions, and accelerate development processes while maintaining rigorous security standards.',
     description_5: `Dedicated to technical excellence, security, and ethics, driving project success as a key team member embedded within the client's operations.`,
-    color: colorSchema[0]
+    color: colorSchema[0],
+    position: positionSchema[1],
   },
   {
     time: 'APRIL 2022 | JULY 2023', title: 'ALT', 
@@ -45,7 +46,8 @@ export const timelineEvents = [
     description_3: 'Implemented robust security protocols and data validation mechanisms to protect sensitive information, adhering to industry compliance standards.',
     description_4: 'Collaborated closely with cross-functional teams to ensure a smooth transition, significantly enhancing operational efficiency and user experience.',
     description_5: 'Actively participated in defining the software architecture, implementation, and rigorous testing phases of the new platform, guaranteeing system quality and performance.',
-    color: colorSchema[0]
+    color: colorSchema[0],
+    position: positionSchema[0],
   },
   {
     time: "MARCH 2021 | MAY 2022", title: 'OCTOSOFT',
@@ -54,7 +56,8 @@ export const timelineEvents = [
     description_3: 'Contributed to the design, structure, and implementation of new dApps (decentralized applications), as well as maintaining and updating existing web platforms with EVM connectivity.',
     description_4: 'Developed robust back-end solutions using Node.js to create specialized libraries for integrating Ethereum smart contracts.',
     description_5: 'Actively participated in weekly progress meetings, aligning efforts with team goals and driving project advancements in the blockchain space.',
-    color: colorSchema[0]
+    color: colorSchema[0],
+    position: positionSchema[1],
   },
   // ...other events
 ];
