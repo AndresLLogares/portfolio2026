@@ -1,14 +1,15 @@
-import { Container, Typography, Box, Grid } from '@mui/material';
+import { Container, Typography, Box, Grid, useMediaQuery } from '@mui/material';
 import { ButtonsInfo, professionalEthos } from '../data/portfolio';
 
 export const ProfessionalEthos = () => {
+    const isMobile = useMediaQuery('(max-width:1024px)');
     return (
         <Box
-            id="about"
+            id="professional-ethos"
             sx={{
                 py: 10,
-                backgroundColor: 'rgb(254, 252, 254, 0.4)',
-                backdropFilter: 'blur(10px)',
+                backgroundColor: isMobile ? 'rgb(254, 252, 254, 1)' : 'rgb(254, 252, 254, 0.4)',
+                backdropFilter: isMobile ? 'none' : 'blur(10px)',
             }}
         >
             <Container maxWidth="lg">
