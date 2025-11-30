@@ -47,8 +47,8 @@ export const About = () => {
                                 color: 'text.primary',
                                 marginBottom: '16px',
                             }}
+                            dangerouslySetInnerHTML={{ __html: AboutMeInfo?.info_3 }}
                         >
-                            {AboutMeInfo?.info_3}
                         </Typography>
                         <Typography
                             variant="body1"
@@ -56,8 +56,8 @@ export const About = () => {
                                 color: 'text.primary',
                                 marginBottom: '16px',
                             }}
+                            dangerouslySetInnerHTML={{ __html: AboutMeInfo?.info_4 }}
                         >
-                            {AboutMeInfo?.info_4}
                         </Typography>
                     </Grid>
                 </Grid>
