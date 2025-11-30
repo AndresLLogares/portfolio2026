@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
@@ -104,7 +105,25 @@ function KineticParticles() {
 }
 
 export const Background3D = () => {
-  // TODO: Implementar lógica de cámara y mouse interactivo
+  const isSmallScreen = useMediaQuery('(max-width:1024px)');
+  if (isSmallScreen) {
+    // Fondo alternativo para móviles (color plano)
+    return (
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: -1,
+          pointerEvents: "none",
+          background: "#FA6400"
+        }}
+      />
+    );
+  }
+  // Desktop: fondo 3D
   return (
     <div
       style={{
@@ -119,7 +138,7 @@ export const Background3D = () => {
     >
       <Canvas
         camera={{ position: [0, 0, 50], fov: 75 }}
-        style={{ position: "absolute", top: 0, left: 0, width: "100vw", height: "100vh", background: "#FF6B01" }}
+        style={{ position: "absolute", top: 0, left: 0, width: "100vw", height: "100vh", background: "#FA6400" }}
         dpr={[1, 2]}
       >
         <FoldingPlanes />
