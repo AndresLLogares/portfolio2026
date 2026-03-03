@@ -6,7 +6,7 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-export const AnimatedSection = ({ children, delay = 0 }: AnimatedSectionProps) => {
+export const AnimatedSection = ({ children }: AnimatedSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

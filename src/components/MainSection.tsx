@@ -6,7 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const MainSection = () => {
   const [activeView, setActiveView] = useState<'about' | 'journey' | 'ethos' | 'contact'>('about');
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const isSmallScreen = useMediaQuery('(max-width:1024px)');
 
   const handleViewChange = useCallback((view: 'about' | 'journey' | 'ethos' | 'contact') => {
