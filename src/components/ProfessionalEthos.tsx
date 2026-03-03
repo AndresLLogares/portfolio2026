@@ -8,7 +8,7 @@ export const ProfessionalEthos = () => {
             id="professional-ethos"
             sx={{
                 py: 10,
-                backgroundColor: isMobile ? 'rgb(254, 252, 254, 1)' : 'rgb(254, 252, 254, 0.4)',
+                backgroundColor: '#fefcfe',
                 backdropFilter: isMobile ? 'none' : 'blur(10px)',
             }}
         >

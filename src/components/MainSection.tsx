@@ -1,16 +1,19 @@
 import { Typography, Grid, Box } from '@mui/material';
 import { ButtonsInfo, personalInfo, timelineEvents } from '../data/portfolio';
-import { useState } from 'react';
+import { useState, useCallback, useTransition } from 'react';
 import { About, AnimatedSection, Contact, ModernButton, MyJourney, ProfessionalEthos } from '.';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const MainSection = () => {
   const [activeView, setActiveView] = useState<'about' | 'journey' | 'ethos' | 'contact'>('about');
+  const [isPending, startTransition] = useTransition();
   const isSmallScreen = useMediaQuery('(max-width:1024px)');
 
-  const handleViewChange = (view: 'about' | 'journey' | 'ethos' | 'contact') => {
-    setActiveView(view);
-  };
+  const handleViewChange = useCallback((view: 'about' | 'journey' | 'ethos' | 'contact') => {
+    startTransition(() => {
+      setActiveView(view);
+    });
+  }, []);
 
   return (
     <Box
@@ -39,7 +42,7 @@ export const MainSection = () => {
             variant="h2"
             sx={{
               mb: 0,
-              color: 'text.primary',
+              color: 'text.secondary',
             }}
           >
             {personalInfo.name}
@@ -54,19 +57,19 @@ export const MainSection = () => {
             {personalInfo.title}
           </Typography>
 
-          <ModernButton onClick={() => handleViewChange('about')}>
+          <ModernButton onClick={() => handleViewChange('about')} isActive={activeView === 'about'}>
             {ButtonsInfo?.aboutMe}
           </ModernButton>
 
-          <ModernButton onClick={() => handleViewChange('journey')}>
+          <ModernButton onClick={() => handleViewChange('journey')} isActive={activeView === 'journey'}>
             {ButtonsInfo?.myJourney}
           </ModernButton>
 
-          <ModernButton onClick={() => handleViewChange('ethos')}>
+          <ModernButton onClick={() => handleViewChange('ethos')} isActive={activeView === 'ethos'}>
             {ButtonsInfo?.professionalEthos}
           </ModernButton>
 
-          <ModernButton onClick={() => handleViewChange('contact')}>
+          <ModernButton onClick={() => handleViewChange('contact')} isActive={activeView === 'contact'}>
             {ButtonsInfo?.contactMe}
           </ModernButton>
         </Grid>
